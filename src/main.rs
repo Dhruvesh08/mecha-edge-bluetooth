@@ -1,28 +1,22 @@
-use log::info;
+use std::error::Error;
+use btleplug::api::{Central, Manager as _, Peripheral, ScanFilter};
 
-#[tokio::main(flavor = "current_thread")]
-async fn main() -> bluer::Result<()> {
-    env_logger::init();
-
-
-    info!("Starting Bluetooth session");
-    let session = bluer::Session::new().await?;
-
-    info!("Getting default adapter");
-    let adapter = session.default_adapter().await?;
-
-    info!("Setting adapter powered");
-    adapter.set_powered(true).await?;
+use btleplug::platform::Manager;
 
 
-    //after two minutes, stop the adapter
-    tokio::time::sleep(tokio::time::Duration::from_secs(120)).await;
-    
-    info!("Stopping adapter");
-    adapter.set_powered(false).await?;
 
-    
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    pretty_env_logger::init();
 
+    let manager = Manager::new().await.unwrap();
+
+    // get the first bluetooth adapter
+    println!("getting first adapter");
+    let adapters = manager.adapters().await?;
+
+    println!("turning on adapters");
+    let _central = adapters.into_iter().nth(0).unwrap();
 
     Ok(())
 

@@ -7,11 +7,11 @@ inherit cargo
 
 # how to get mecha-edge-bluetooth could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/mecha-edge-bluetooth/0.1.0"
-SRC_URI += "git://github.com/Dhruvesh08/mecha-edge-bluetooth.git;protocol=https;nobranch=1;branch=bluer"
-SRCREV = "bac2838db21d6d1ce71dfc9d7b9deec5c602e4d1"
+SRC_URI += "git://github.com/Dhruvesh08/mecha-edge-bluetooth.git;protocol=https;nobranch=1;branch=bluetooth-on-off"
+SRCREV = "d22348ee251ec444fc9f52be258fb8570e95eabe"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-PV:append = ".AUTOINC+bac2838db2"
+PV:append = ".AUTOINC+d22348ee25"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
@@ -27,6 +27,12 @@ SRC_URI += " \
     crate://crates.io/bytes/1.4.0 \
     crate://crates.io/cc/1.0.83 \
     crate://crates.io/cfg-if/1.0.0 \
+    crate://crates.io/custom_debug/0.5.1 \
+    crate://crates.io/custom_debug_derive/0.5.1 \
+    crate://crates.io/dbus-crossroads/0.5.2 \
+    crate://crates.io/dbus-tokio/0.7.6 \
+    crate://crates.io/dbus/0.9.7 \
+    crate://crates.io/displaydoc/0.2.4 \
     crate://crates.io/env_logger/0.10.0 \
     crate://crates.io/errno-dragonfly/0.1.2 \
     crate://crates.io/errno/0.3.2 \
@@ -47,7 +53,9 @@ SRC_URI += " \
     crate://crates.io/humantime/2.1.0 \
     crate://crates.io/is-terminal/0.4.9 \
     crate://crates.io/itoa/1.0.9 \
+    crate://crates.io/lazy_static/1.4.0 \
     crate://crates.io/libc/0.2.147 \
+    crate://crates.io/libdbus-sys/0.2.5 \
     crate://crates.io/linux-raw-sys/0.4.5 \
     crate://crates.io/lock_api/0.4.10 \
     crate://crates.io/log/0.4.20 \
@@ -62,8 +70,11 @@ SRC_URI += " \
     crate://crates.io/object/0.32.0 \
     crate://crates.io/parking_lot/0.12.1 \
     crate://crates.io/parking_lot_core/0.9.8 \
+    crate://crates.io/pin-project-internal/1.1.3 \
     crate://crates.io/pin-project-lite/0.2.12 \
+    crate://crates.io/pin-project/1.1.3 \
     crate://crates.io/pin-utils/0.1.0 \
+    crate://crates.io/pkg-config/0.3.27 \
     crate://crates.io/pretty_env_logger/0.5.0 \
     crate://crates.io/proc-macro2/1.0.66 \
     crate://crates.io/quote/1.0.33 \
@@ -86,11 +97,15 @@ SRC_URI += " \
     crate://crates.io/static_assertions/1.1.0 \
     crate://crates.io/strum/0.25.0 \
     crate://crates.io/strum_macros/0.25.2 \
+    crate://crates.io/syn/1.0.109 \
     crate://crates.io/syn/2.0.29 \
+    crate://crates.io/synstructure/0.12.6 \
     crate://crates.io/termcolor/1.2.0 \
     crate://crates.io/tokio-macros/2.1.0 \
+    crate://crates.io/tokio-stream/0.1.14 \
     crate://crates.io/tokio/1.32.0 \
     crate://crates.io/unicode-ident/1.0.11 \
+    crate://crates.io/unicode-xid/0.2.4 \
     crate://crates.io/uuid/1.4.1 \
     crate://crates.io/wasi/0.11.0+wasi-snapshot-preview1 \
     crate://crates.io/winapi-i686-pc-windows-gnu/0.4.0 \
