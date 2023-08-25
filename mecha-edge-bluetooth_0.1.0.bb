@@ -8,10 +8,10 @@ inherit cargo
 # how to get mecha-edge-bluetooth could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/mecha-edge-bluetooth/0.1.0"
 SRC_URI += "git://github.com/Dhruvesh08/mecha-edge-bluetooth.git;protocol=https;nobranch=1;branch=bluer"
-SRCREV = "0d1fbf4b1467d2a0656875f4dd1e01e0943d21f9"
+SRCREV = "bac2838db21d6d1ce71dfc9d7b9deec5c602e4d1"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-PV:append = ".AUTOINC+0d1fbf4b14"
+PV:append = ".AUTOINC+bac2838db2"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
